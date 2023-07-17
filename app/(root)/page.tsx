@@ -1,7 +1,23 @@
+"use client";
+
+import { useEffect } from "react";
+
+import { Modal } from "@/components/ui/modal";
+import { useStoreModal } from "@/hooks/use-store-modal";
+
 const SetupPage = () => {
+    const onOpen = useStoreModal((state) => state.onOpen);
+    const isOpen = useStoreModal((state) => state.oisOpen);
+
+    useEffect(() => {
+        if(!isOpen) {
+            onOpen();
+        }
+    }, [isOpen, onOpen]);
+
     return (
       <div className="p-4">
-        This is a protected route!
+        Root page
       </div>
     )
   }
