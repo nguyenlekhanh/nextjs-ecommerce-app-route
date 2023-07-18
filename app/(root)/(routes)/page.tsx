@@ -10,7 +10,7 @@ import {
 
 const SetupPage = () => {
     const onOpen = useStoreModal((state) => state.onOpen);
-    const isOpen = useStoreModal((state) => state.oisOpen);
+    const isOpen = useStoreModal((state) => state.isOpen);
 
     useEffect(() => {
         if(!isOpen) {
@@ -18,12 +18,7 @@ const SetupPage = () => {
         }
     }, [isOpen, onOpen]);
 
-    return (
-      <div className="p-4">
-        <UserButton />
-        Root page
-      </div>
-    )
+    return null;
   }
 
 export default SetupPage;
